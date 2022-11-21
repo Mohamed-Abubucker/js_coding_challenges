@@ -1,16 +1,17 @@
 // functional way
-var singleton = function () {
+var singleton = (function () {
     function local() {
         console.log('local');
     }
     function public() {
+        local();
         console.log('public');
     }
 
     return {
         public
     }
-}();
+})();
 
 singleton.public();
 
